@@ -2,7 +2,7 @@ import express from "express";
 
 const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
 const livros = [
     {id: 1, titulo: "Storytelling com Dados: Um guia sobre visualização de dados para profissionais de negócios"},
@@ -31,6 +31,13 @@ app.put('/livros/:id', (req, res) => {
     const index = buscaLivro(req.params.id);
     livros[index].titulo = req.body.titulo;
     res.json(livros)
+})
+
+app.delete('/livros/:id', (req, res) => {
+    const {id} = req.params;
+    const index = buscaLivro(id);
+    livros.splice(index,1);
+    res.send(`O livro ${id} foi apagado com sucesso!`);
 })
 
 function buscaLivro(id){
