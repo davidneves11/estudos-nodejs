@@ -21,8 +21,4 @@ app.delete('/livros/:id', (req, res) => {
     res.send(`O livro ${id} foi apagado com sucesso!`);
 })
 
-function buscaLivro(id){
-    return livros.findIndex(livro => livro.id == id);
-}
-
 export default app
