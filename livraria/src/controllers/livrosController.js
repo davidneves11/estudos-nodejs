@@ -25,7 +25,7 @@ class LivroController{
 
         livro.save((err) => {
             if(err){
-                res.status(500).send({message: `${err.message} - falha ao cadastrar o livro :(`});
+                res.status(500).send({message: `${err.message} - Falha ao cadastrar o livro :(`});
             }else{
                 res.status(201).send(livro.toJSON());
             }
@@ -37,9 +37,21 @@ class LivroController{
 
         livros.findByIdAndUpdate(id, {$set: req.body}, (err) => {
             if(err){
-                res.status(500).send({message: err.message})
+                res.status(500).send({message: `${err.message} - Id do livro não encontrado.`})
             }else{
                 res.status(200).send({message: 'Livro atualizado com sucesso!'})
+            }
+        })
+    }
+
+    static excluirLivro = (req, res) => {
+        const id = req.params.id
+
+        livros.findByIdAndDelete(id, (err) => {
+            if(err){
+                res.status(500).send({message: `${err.message} - Id do livro não encontrado.`})
+            }else{
+                res.status(200).send({message: 'Livro excluído com sucesso!'})
             }
         })
     }
