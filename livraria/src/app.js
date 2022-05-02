@@ -14,12 +14,6 @@ const app = express();
 
 routes(app);
 
-app.put('/livros/:id', (req, res) => {
-    const index = buscaLivro(req.params.id);
-    livros[index].titulo = req.body.titulo;
-    res.json(livros)
-})
-
 app.delete('/livros/:id', (req, res) => {
     const {id} = req.params;
     const index = buscaLivro(id);
