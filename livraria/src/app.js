@@ -1,6 +1,7 @@
 import express from "express";
 import db from "./config/dbConnect.js";
-import livros from './models/Livro.js'
+import livros from './models/Livro.js';
+import routes from './routes/index.js';
 
 db.on("error", console.log.bind(console, 'Erro de conexão.'));
 db.once("open", () => {
@@ -9,27 +10,9 @@ db.once("open", () => {
 
 const app = express();
 
-app.use(express.json());
+//app.use(express.json());
 
-/* const livros = [
-    {id: 1, titulo: "Storytelling com Dados: Um guia sobre visualização de dados para profissionais de negócios"},
-    {id: 2, titulo: "Data Science para negócios"}
-] */
-
-app.get('/', (req, res) => {
-    res.status(200).send('Home da livraria');
-})
-
-app.get('/livros', (req, res) => {
-    livros.find((err, livros) =>{
-        res.status(200).json(livros);
-    })
-})
-
-app.get('/livros/:id', (req, res) => {
-    const index = buscaLivro(req.params.id);
-    res.json(livros[index])
-})
+routes(app);
 
 app.post('/livros', (req, res) => {
     livros.push(req.body)
