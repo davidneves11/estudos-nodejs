@@ -1,7 +1,7 @@
 # Livraria de Dados
 
 ## Descrição:
-Foi desenvolvida uma API Rest com conexão ao [MongoDB](https://www.alura.com.br/artigos/mongodb-o-banco-baseado-em-documentos) na nuvem. Nele, temos as funcionalidades de um CRUD completo. 
+Foi desenvolvida uma API Rest com conexão ao [MongoDB](https://www.alura.com.br/artigos/mongodb-o-banco-baseado-em-documentos) na nuvem, onde temos as funcionalidades de um CRUD completo. 
 
 ## Construção do projeto:
 
