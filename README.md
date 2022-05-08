@@ -5,4 +5,4 @@
 **Projetos desenvolvidos:**
 
 - [X] [CRUD de uma livraria com o MongoDB](https://github.com/davidneves11/estudos-nodejs/tree/main/livraria)
-- [ ] CRUD com MySQL
+- [ ] [CRUD com MySQL](https://github.com/davidneves11/estudos-nodejs/tree/main/escola)
